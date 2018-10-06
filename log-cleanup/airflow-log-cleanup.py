@@ -81,8 +81,8 @@ echo "Finished Running Cleanup Process"
 
 for log_cleanup_id in range(1, NUMBER_OF_WORKERS + 1):
 
-    log_cleanup = BashOperator(
+    log_cleanup_op = BashOperator(
         task_id='log_cleanup_' + str(log_cleanup_id),
-        bash_command=log_cleanup,
+        bash_command=log_cleanup_op,
         provide_context=True,
         dag=dag)
